@@ -7,97 +7,104 @@
 // Dado este array:
 let arrayNumeros1 = [4, 5, 3, 8, 2, 7, 1, 6]
 let arrayNumeros2 = [4, 2, 7, 1, 6]
+let arrayNumeros3 = [4, 2.5, 7, 1, 6, -2, 10]
 // o cualquier otro array solo con números
 
 // 1) Mostrar por consola la suma de todos los valores
+console.log("1) Mostrar por consola la suma de todos los valores");
+let array = arrayNumeros3
+console.log(`Utilizando el array: ${array}`);
 let sumaArrayNumeros1 = 0
 
-for (i = 0; i < arrayNumeros1.length; i++) {
+for (i = 0; i < array.length; i++) {
     
-    console.log(arrayNumeros1[i]);
+    // console.log(arrayNumeros1[i]);
     
-    sumaArrayNumeros1 = sumaArrayNumeros1+arrayNumeros1[i]
+    sumaArrayNumeros1 = sumaArrayNumeros1+array[i]
 
-    console.log(sumaArrayNumeros1);
+    // console.log(sumaArrayNumeros1);
 }
-console.log(sumaArrayNumeros1);
+console.log("La suma de todos los valores es:", sumaArrayNumeros1);
 
 
 // 2) Mostrar por consola el promedio
+console.log("2) Mostrar por consola el promedio");
+array = arrayNumeros1
+console.log(`Utilizando el array: ${array}`);
 
 let sumaArrayNumeros2 = 0
 
-for (i = 0; i < arrayNumeros2.length; i++) {
+for (i = 0; i < array.length; i++) {
     
-    console.log(arrayNumeros2[i]);
+    // console.log(arrayNumeros2[i]);
     
-    sumaArrayNumeros2 = sumaArrayNumeros2+arrayNumeros2[i]
+    sumaArrayNumeros2 = sumaArrayNumeros2+array[i]
 
-    console.log(sumaArrayNumeros2/arrayNumeros2.length);
+    // console.log(sumaArrayNumeros2/arrayNumeros2.length);
 }
-console.log(sumaArrayNumeros2/arrayNumeros2.length);
+console.log("El promedio de todos los valores es:", sumaArrayNumeros2/array.length);
 
 
 // 3) Encontrar los valores máximo y mínimo
+console.log("3) Encontrar los valores máximo y mínimo");
+array = arrayNumeros3
+console.log(`Utilizando el array: ${array}`);
+let arrayNumerosMax = array[0]
+let arrayNumerosMin = array[0]
 
-let arrayNumerosMax = 0
-
-for  ( i = 0; i < arrayNumeros2.length; i++) {
+for  ( i = 0; i < array.length; i++) {
  
-    console.log(arrayNumeros2);
+   // console.log(arrayNumeros2);
 
-    if(arrayNumeros2[i] > arrayNumerosMax) {
-        console.log(arrayNumerosMax);
-        arrayNumerosMax = arrayNumeros2[i]
-        console.log(arrayNumerosMax);
-    } 
-    
-    console.log(arrayNumerosMax);
-}
-
-let arrayNumerosMin = arrayNumerosMax
-
-for  ( i = 0; i < arrayNumeros2.length; i++) {
- 
-    console.log(arrayNumeros2);
-
-    if ( arrayNumeros2[i] < arrayNumerosMin) {
-        console.log(arrayNumerosMin);
-        arrayNumerosMin = arrayNumeros2[i]
-        console.log(arrayNumerosMin);
+    if(array[i] > arrayNumerosMax) {
+       // console.log(arrayNumerosMax);
+        arrayNumerosMax = array[i]
+      //  console.log(arrayNumerosMax);
+    } else if ( array[i] < arrayNumerosMin) {
+       // console.log(arrayNumerosMin);
+        arrayNumerosMin = array[i]
+       // console.log(arrayNumerosMin);
     }
     
-    console.log(arrayNumerosMin);
+    // console.log(arrayNumerosMin);
+    
+    // console.log(arrayNumerosMax);
 }
 
-console.log(arrayNumerosMax);
+console.log("El valor máximo es: ",arrayNumerosMax);
 
-console.log(arrayNumerosMin);
+console.log("El valor mínimo es: ",arrayNumerosMin);
 
 
 // 4) Sumar los valores con índice par y restar los impares
+console.log("4) Sumar los valores con índice par y restar los impares");
+array = arrayNumeros2
+console.log(`Utilizando el array: ${array}`);
 
 let sumaArrayNumerosPar = 0
 
 let sumaArrayNumerosImpar = 0
 
-for ( i = 0; i < arrayNumeros2.length ; i++) {
+for ( i = 0; i < array.length ; i++) {
 
-if (arrayNumeros2[i] % 2 == 0) {
-    sumaArrayNumerosPar = sumaArrayNumerosPar+arrayNumeros2[i]
-} else {
-    sumaArrayNumerosImpar = sumaArrayNumerosImpar-arrayNumeros2[i]
+if (array[i] % 2 == 0) {
+    // console.log(arrayNumeros2);
+    sumaArrayNumerosPar = sumaArrayNumerosPar+array[i]
+    // console.log(arrayNumeros2);
+} else if (array[i] % 2 != 0) {
+    // console.log(arrayNumeros2);
+    sumaArrayNumerosImpar = sumaArrayNumerosImpar-array[i]
 }
 
-console.log(sumaArrayNumerosPar);
+// console.log(sumaArrayNumerosPar);
 
-console.log(sumaArrayNumerosImpar);
+// console.log(sumaArrayNumerosImpar);
 
 }
 
-console.log(sumaArrayNumerosPar);
+console.log("La suma de los valores pares es:", sumaArrayNumerosPar);
 
-console.log(sumaArrayNumerosImpar);
+console.log("La suma de los valores impares es:", sumaArrayNumerosImpar);
 
 
 // Hay que mostrar por consola cada resultado
@@ -110,6 +117,41 @@ let arrayNombres2 = ["Clint", "Robert", "James", "Anne", "Ingrid", "John", "Patr
 // 5) Programa el código para encontrar el elemento con el texto más largo
 // y guardarlo en la variable varTextoMasLargo
 // Si hay más de un valor, guardarlos en el array arrayTextosMasLargos.
+
+// Creo un arrayString limpio
+let arrayString = []
+
+// Lleno mi arrayString con la longitud de cada uno de los nombres
+for (i = 0; i < arrayNombres2.length; i++) {
+    console.log(arrayNombres2[i].length);
+    arrayString.push(arrayNombres2[i].length)
+}
+console.log(arrayString);
+
+// Busco el valor más alto
+let arrayNumerosMaxString = arrayString[0]
+
+for  ( i = 0; i < arrayString.length; i++) {
+     if(arrayString[i] > arrayNumerosMaxString) {
+         arrayNumerosMaxString = arrayString[i]
+     } 
+    //  let arrayNumerosMaxIndice = arrayString[i].indexOf
+     console.log("El valor máximo es: ", arrayNumerosMaxString);
+ }
+ 
+ console.log("El valor máximo es: ", arrayNumerosMaxString);
+ console.log("El indice del valor máximo es: ", arrayNumerosMaxIndice);
+
+ // Busco el nombre al que corresponde el indice
+ for  ( i = 0; i < arrayString.length; i++) {
+    if(arrayString[i] > arrayNumerosMax) {
+        arrayNumerosMax = arrayString[i]
+    } 
+
+
+        let arrayTextosMasLargos = []
+   let varTextoMasLargo = ""
+}
 
 
 // 6) Lo mismo para el texto más corto.
