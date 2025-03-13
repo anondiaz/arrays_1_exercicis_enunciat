@@ -121,6 +121,7 @@ let arrayNombres2 = ["Clint", "Robert", "James", "Anne", "Ingrid", "John", "Patr
 // Creo un arrayString limpio
 let arrayString = []
 
+
 // Lleno mi arrayString con la longitud de cada uno de los nombres
 for (i = 0; i < arrayNombres2.length; i++) {
     console.log(arrayNombres2[i].length);
@@ -128,10 +129,14 @@ for (i = 0; i < arrayNombres2.length; i++) {
 }
 console.log(arrayString);
 
+for (clave of arrayString) {
+    console.log(clave);
+}
+
 // Busco el valor más alto
 let arrayNumerosMaxString = arrayString[0]
 
-for  ( i = 0; i < arrayString.length; i++) {
+for  ( clave in arrayString) {
      if(arrayString[i] > arrayNumerosMaxString) {
          arrayNumerosMaxString = arrayString[i]
      } 
