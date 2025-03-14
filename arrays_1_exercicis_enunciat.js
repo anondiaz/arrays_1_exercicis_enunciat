@@ -118,46 +118,30 @@ let arrayNombres2 = ["Clint", "Robert", "James", "Anne", "Ingrid", "John", "Patr
 // y guardarlo en la variable varTextoMasLargo
 // Si hay más de un valor, guardarlos en el array arrayTextosMasLargos.
 
-// Creo un arrayString limpio
-let arrayString = []
-
+let arrayNMax = arrayNombres2[0].length
+let arrayIndice = arrayNombres2[0]
 
 // Lleno mi arrayString con la longitud de cada uno de los nombres
 for (i = 0; i < arrayNombres2.length; i++) {
-    console.log(arrayNombres2[i].length);
-    arrayString.push(arrayNombres2[i].length)
+    let arrayNombresMax = [i]
+    let arrayLong = arrayNombres2[i].length
+    
+    console.log(arrayNMax);
+    console.log(arrayLong);
+    console.log(arrayNombresMax);
+    
+    if(arrayLong > arrayNMax) {
+        console.log(arrayNMax);
+         arrayNMax = arrayLong
+        console.log(arrayLong);
+        arrayIndice = i
+        arrayIndice
+     }
+
 }
-console.log(arrayString);
-
-for (clave of arrayString) {
-    console.log(clave);
-}
-
-// Busco el valor más alto
-let arrayNumerosMaxString = arrayString[0]
-
-for  ( clave in arrayString) {
-     if(arrayString[i] > arrayNumerosMaxString) {
-         arrayNumerosMaxString = arrayString[i]
-     } 
-    //  let arrayNumerosMaxIndice = arrayString[i].indexOf
-     console.log("El valor máximo es: ", arrayNumerosMaxString);
- }
- 
- console.log("El valor máximo es: ", arrayNumerosMaxString);
- console.log("El indice del valor máximo es: ", arrayNumerosMaxIndice);
-
- // Busco el nombre al que corresponde el indice
- for  ( i = 0; i < arrayString.length; i++) {
-    if(arrayString[i] > arrayNumerosMax) {
-        arrayNumerosMax = arrayString[i]
-    } 
-
-
-        let arrayTextosMasLargos = []
-   let varTextoMasLargo = ""
-}
-
+console.log(arrayIndice);
+console.log(arrayNombres2[arrayIndice]);
+console.log(arrayNMax)
 
 // 6) Lo mismo para el texto más corto.
 
