@@ -119,13 +119,15 @@ let arrayNombres2 = ["Clint", "Robert", "James", "Anne", "Ingrid", "John", "Patr
 // Si hay más de un valor, guardarlos en el array arrayTextosMasLargos.
 
 let arrayNMax = arrayNombres2[0].length
-let arrayIndice = arrayNombres2[0]
+let arrayIndice = arrayNombres2.length -1
+let arrayTextosMasLargos =[]
+console.log(arrayNMax);
+console.log(arrayIndice);
 
-// Lleno mi arrayString con la longitud de cada uno de los nombres
 for (i = 0; i < arrayNombres2.length; i++) {
     let arrayNombresMax = [i]
     let arrayLong = arrayNombres2[i].length
-    
+        
     console.log(arrayNMax);
     console.log(arrayLong);
     console.log(arrayNombresMax);
@@ -135,10 +137,11 @@ for (i = 0; i < arrayNombres2.length; i++) {
          arrayNMax = arrayLong
         console.log(arrayLong);
         arrayIndice = i
-        arrayIndice
-     }
-
+        console.log(arrayIndice);
+        arrayTextosMasLargos.push(arrayIndice)
+    }
 }
+console.log(arrayTextosMasLargos)
 console.log(arrayIndice);
 console.log(arrayNombres2[arrayIndice]);
 console.log(arrayNMax)
