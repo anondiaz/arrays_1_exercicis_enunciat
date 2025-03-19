@@ -120,33 +120,96 @@ let arrayNombres2 = ["Clint", "Robert", "James", "Anne", "Ingrid", "John", "Patr
 
 let arrayNMax = arrayNombres2[0].length
 let arrayIndice = arrayNombres2.length -1
-let arrayTextosMasLargos =[]
-console.log(arrayNMax);
-console.log(arrayIndice);
+let arrayTextosMasLargos = []
+let varTextoMasLargo = ""
+// console.log(arrayNMax);
+// console.log(arrayIndice);
 
+// busco la cantidad de caracteres de la palabra más larga y guardo el indice y la cantidad
 for (i = 0; i < arrayNombres2.length; i++) {
     let arrayNombresMax = [i]
     let arrayLong = arrayNombres2[i].length
-        
-    console.log(arrayNMax);
-    console.log(arrayLong);
-    console.log(arrayNombresMax);
-    
+    // console.log(arrayNMax);
+    // console.log(arrayLong);
+    // console.log(arrayNombresMax);
     if(arrayLong > arrayNMax) {
-        console.log(arrayNMax);
+        // console.log(arrayNMax);
          arrayNMax = arrayLong
-        console.log(arrayLong);
+        // console.log(arrayLong);
         arrayIndice = i
-        console.log(arrayIndice);
-        arrayTextosMasLargos.push(arrayIndice)
+        // console.log(arrayIndice);
     }
 }
-console.log(arrayTextosMasLargos)
-console.log(arrayIndice);
-console.log(arrayNombres2[arrayIndice]);
-console.log(arrayNMax)
+// console.log(arrayIndice);
+// console.log(arrayNombres2[arrayIndice]);
+// console.log(arrayNMax)
+// voy a buscar cuantas palabras hay con esa cantidad de caracteres
+for (i = 0; i < arrayNombres2.length; i++) {
+      
+    if(arrayNombres2[i].length == arrayNMax) {
+        arrayTextosMasLargos.push(arrayNombres2[i])
+        // console.log(arrayTextosMasLargos);
+    }
+}
+// Si la cantidad de elementos del array es menor de 2 lo paso a variable según el enunciado
+if(arrayTextosMasLargos.length < 2) {
+    // console.log( arrayTextosMasLargos.length)
+    varTextoMasLargo = arrayTextosMasLargos.toString()
+    arrayTextosMasLargos = []
+    console.log(`Solo hay un elemento con el texto más largo, contiene ${arrayNMax} caracteres y es: ${varTextoMasLargo}`);
+    
+} else {
+    console.log(`Los elementos con el texto más largo contienen ${arrayNMax} caracteres y son: ${arrayTextosMasLargos}`);
+}
+// console.log( arrayTextosMasLargos.length)
+
+
 
 // 6) Lo mismo para el texto más corto.
+let arrayNMin = arrayNombres2[0].length
+let arrayIndiceMin = arrayNombres2.length -1
+let arrayTextosMasCortos = []
+let varTextoMasCorto = ""
+// console.log(arrayNMin);
+// console.log(arrayIndiceMin);
+
+// busco la cantidad de caracteres de la palabra más larga y guardo el indice y la cantidad
+for (i = 0; i < arrayNombres2.length; i++) {
+    let arrayNombresMin = [i]
+    let arrayLong = arrayNombres2[i].length
+    // console.log(arrayNMin);
+    // console.log(arrayLong);
+    // console.log(arrayNombresMin);
+    if(arrayLong < arrayNMin) {
+        // console.log(arrayNMin);
+         arrayNMin = arrayLong
+        // console.log(arrayLong);
+        arrayIndiceMin = i
+        // console.log(arrayIndiceMin);
+    }
+}
+// console.log(arrayIndiceMin);
+// console.log(arrayNombres2[arrayIndiceMin]);
+// console.log(arrayNMin)
+// voy a buscar cuantas palabras hay con esa cantidad de caracteres
+for (i = 0; i < arrayNombres2.length; i++) {
+      
+    if(arrayNombres2[i].length == arrayNMin) {
+        arrayTextosMasCortos.push(arrayNombres2[i])
+        // console.log(arrayTextosMasCortos);
+    }
+}
+// Si la cantidad de elementos del array es menor de 2 lo paso a variable según el enunciado
+if(arrayTextosMasCortos.length < 2) {
+    // console.log( arrayTextosMasCortos.length)
+    varTextoMasCorto = arrayTextosMasCortos.toString()
+    arrayTextosMasCortos =[]
+    console.log(`Solo hay un elemento con el texto más corto, contiene ${arrayNMin} caracteres y es: ${varTextoMasCorto}`);
+    
+} else {
+    console.log(`Los elementos con el texto más corto contienen ${arrayNMin} caracteres y son: ${arrayTextosMasCortos}`);
+}
+// console.log( arrayTextosMasLargos.length)
 
 
 // 7) Obtén un array llamado longitudNombres que tenga como elementos las longitudes de los textos
