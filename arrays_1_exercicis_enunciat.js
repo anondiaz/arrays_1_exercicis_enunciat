@@ -117,6 +117,8 @@ let arrayNombres2 = ["Clint", "Robert", "James", "Anne", "Ingrid", "John", "Patr
 // 5) Programa el código para encontrar el elemento con el texto más largo
 // y guardarlo en la variable varTextoMasLargo
 // Si hay más de un valor, guardarlos en el array arrayTextosMasLargos.
+console.log("5) Programa el código para encontrar el elemento con el texto más largo");
+console.log(`Utilizando el array: ${arrayNombres2}`);
 
 let arrayNMax = arrayNombres2[0].length
 let arrayIndice = arrayNombres2.length -1
@@ -166,6 +168,8 @@ if(arrayTextosMasLargos.length < 2) {
 
 
 // 6) Lo mismo para el texto más corto.
+console.log("6) Lo mismo para el texto más corto.");
+console.log(`Utilizando el array: ${arrayNombres2}`);
 let arrayNMin = arrayNombres2[0].length
 let arrayIndiceMin = arrayNombres2.length -1
 let arrayTextosMasCortos = []
@@ -182,7 +186,7 @@ for (i = 0; i < arrayNombres2.length; i++) {
     // console.log(arrayNombresMin);
     if(arrayLong < arrayNMin) {
         // console.log(arrayNMin);
-         arrayNMin = arrayLong
+        arrayNMin = arrayLong
         // console.log(arrayLong);
         arrayIndiceMin = i
         // console.log(arrayIndiceMin);
@@ -214,9 +218,53 @@ if(arrayTextosMasCortos.length < 2) {
 
 // 7) Obtén un array llamado longitudNombres que tenga como elementos las longitudes de los textos
 // incluidos en cualquiera de los arrays anteriores. Por tanto debes mostrar : [ 5, 6, 5, etc.
+console.log("7) Obtén un array llamado longitudNombres que tenga como elementos las longitudes de los textos");
+console.log(`Utilizando el array: ${arrayNombres2}`);
+
+//Establezco el array
+let longitudNombres = []
+// busco la cantidad de caracteres de cada texto y guardo la cantidad en el array solicitado
+for (i = 0; i < arrayNombres2.length; i++) {
+    longitudNombres.push(arrayNombres2[i].length)
+}
+console.log(`La cantidad de caracteres en cada palabra del array "arrayNombres2" es la siguiente: ${longitudNombres}`);
 
 
 // 8) Crea un array llamado arrayNombresConI que incluya solo los nombres que contengan la letra i
+
+console.log("8) Crea un array llamado arrayNombresConI que incluya solo los nombres que contengan la letra i");
+console.log(`Utilizando el array: ${arrayNombres2}`);
+
+// Establezco el array, la letra y el array final
+let arrayN2 = arrayNombres2
+// console.log(arrayN2);
+let letra = "i"
+let arrayNombresConI = []
+// Vamos a pasar las palabras a minusculas para facilitar la busqueda
+for (i = 0; i < arrayN2.length; i++ ) {
+    let nombresMin = arrayN2[i].toLocaleLowerCase()
+    // console.log(nombresMin);
+    // console.log(nombresMin.split(""));
+    //Ahora vamos a desgranar cada palabra para buscar la letra
+    for (j = 0; j < nombresMin.length; j++) {
+        // console.log(nombresMin[j]);
+        // console.log(j);
+        // Pasamos la primera letra a mayusculas y cortamos el resto para luego unirlo todo
+        let inicial = nombresMin.at(0).toLocaleUpperCase()
+        let resto = nombresMin.slice(1)
+        let nombresMinMayusculas = inicial + resto
+        // Ahora filtramos letra por letra los nombres que incluyan la letra solicitada y solo aceptamos los que no esten ya incluidos
+        if(nombresMin[j] == letra && arrayNombresConI.includes(nombresMinMayusculas) != true){
+            // console.log(nombresMinMayusculas);
+            // Introducimos en el array solo los nombres con la letra solicitada y que no esten ya incluidos
+            arrayNombresConI.push(nombresMinMayusculas)
+            // console.log(arrayNombresConI.includes(nombresMinMayusculas));
+        } 
+    }
+}
+console.log(`Los nombres que incluyen una i son:`);
+console.log(arrayNombresConI);
+
 
 // ====================================================================================================
 
@@ -225,6 +273,20 @@ let arrayMixto = [ "Marie", 24, "Pol", 18, "Judith", 22, "Eva", 28 ]
 
 // 9) Debes obtener otro array llamado arrayBidimensional que sea así:
 // [ ["Marie", 24 ], ["Pol", 18], ["Judith", 22 ], [ "Eva", 28] ]
+
+// Establezco el array
+let arrayBidimensional = []
+for ( i = 0; i < arrayMixto.length; i++){
+    let arrayConjunto = []
+    console.log(arrayConjunto.length);
+    for (j = 0; j < 2; j++){
+        arrayConjunto.push(arrayMixto[i])
+        console.log(arrayConjunto);
+    }
+    
+}
+console.log(arrayBidimensional);
+
 
 // ====================================================================================================
 
