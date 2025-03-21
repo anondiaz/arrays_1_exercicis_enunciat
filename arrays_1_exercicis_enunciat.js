@@ -280,8 +280,11 @@ for ( i = 0; i < arrayMixto.length; i++){
     let arrayConjunto = []
     console.log(arrayConjunto.length);
     for (j = 0; j < 2; j++){
+        console.log(arrayMixto);
         arrayConjunto.push(arrayMixto[i])
         console.log(arrayConjunto);
+        arrayMixto.shift()
+        console.log(arrayMixto);
     }
     
 }
