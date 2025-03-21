@@ -286,7 +286,6 @@ for ( i = 0; i < arrayMixto.length; i++){
         arrayMixto.shift()
         console.log(arrayMixto);
     }
-    
 }
 console.log(arrayBidimensional);
 
