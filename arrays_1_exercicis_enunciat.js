@@ -268,29 +268,32 @@ console.log(arrayNombresConI);
 
 // ====================================================================================================
 
+
 // Dado este array:
 let arrayMixto = [ "Marie", 24, "Pol", 18, "Judith", 22, "Eva", 28 ]
 
 // 9) Debes obtener otro array llamado arrayBidimensional que sea así:
 // [ ["Marie", 24 ], ["Pol", 18], ["Judith", 22 ], [ "Eva", 28] ]
+console.log(`9) Debes obtener otro array llamado arrayBidimensional que sea así: [ ["Marie", 24 ], ["Pol", 18], ["Judith", 22 ], [ "Eva", 28] ]`);
+console.log(`Utilizando el array: ${arrayMixto}`);
 
 // Establezco el arrayBidimensional
 let arrayBidimensional = []
 
 // Recorro cada elemento del arrayMixto
 for ( i = 0; i < arrayMixto.length; i++) {
-    console.log(arrayMixto[i]);
+    // console.log(arrayMixto[i]);
 
   // Uso i mod 2 para recuperar los datos pares, el array esta definido así, tomo nota
   if (i % 2 === 0) {
     // Para comprobar la longitud del array
-    console.log(arrayBidimensional.length);
+    // console.log(arrayBidimensional.length);
     // Para comprobar el contenido del array en cada iteración
-    console.log(arrayBidimensional)
+    // console.log(arrayBidimensional)
     // Cuando i es par, añado ese elemento y el siguiente, buen descubrimiento
     arrayBidimensional.push([arrayMixto[i], arrayMixto[i + 1]]);
     // Para comprobar el contenido del array en cada iteración despues del push de cada sub-array
-    console.log(arrayBidimensional)
+    // console.log(arrayBidimensional)
   }
   
 }
@@ -324,14 +327,48 @@ console.log(arrayBidimensional)
 // ====================================================================================================
 
 // 10) Este array incluye una operación de compra:
+
 const compra = [
     ["Leche", 1.2, 2],
     ["Pan", 0.8, 3],
     ["Huevos", 2.5, 1],
     ["Café", 5.2, 0.5]
 ]
+console.log("10) Este array incluye una operación de compra:");
+console.log(`Con estos datos${compra}`);
 // Se muestra el nombre del artículo, su precio y la cantidad comprada.
 // Debes obtener la cantidad de artículos comprados (no de cada tipo) y el importe total.
 // Por ejemplo: "Has comprado 4 artículos y el importe total es de 12.7 euros"
+let articulos = 0
+let euros = 0
+let totalArticulos = compra.length
+let totalEuros = 0
+
+for (i = 0; i < compra.length; i++){
+    console.log(compra);
+    console.log(compra[i].length);
+    // for (j = 0; j < compra[i].length; j++){
+        console.log(compra[i].length);
+        console.log(compra[i][0]);
+        console.log(compra[i][1]);
+        console.log(compra[i][2]);
+        console.log(parseFloat(compra[i][1]));
+        console.log(parseFloat(compra[i][2]));
+        console.log(parseFloat(compra[i][1]).toFixed(2) * parseFloat(compra[i][2]).toFixed(2));
+        let parcialEuros = parseFloat(compra[i][1]).toFixed(2) * parseFloat(compra[i][2]).toFixed(2)
+        console.log(parseFloat(parcialEuros).toFixed(2))
+        parcialEuros = parseFloat(parcialEuros).toFixed(2)
+        console.log(parcialEuros);
+        parseFloat(totalEuros).toFixed(2) += parseFloat(parcialEuros).toFixed(2)
+        console.log(totalEuros)
+
+    // }
+    console.log(totalEuros);
+}
+
 
 // Después añade otro articulo al array anterior y muestra de nuevo el mensaje informativo con los nuevos datos.
+// const compraNew = compra
+console.log(compraNew);
+console.log("10b) Este array incluye una operación de compra:");
+console.log(`Con estos datos${compra}`);
