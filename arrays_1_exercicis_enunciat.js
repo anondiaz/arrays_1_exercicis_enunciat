@@ -339,36 +339,65 @@ console.log(`Con estos datos${compra}`);
 // Se muestra el nombre del artículo, su precio y la cantidad comprada.
 // Debes obtener la cantidad de artículos comprados (no de cada tipo) y el importe total.
 // Por ejemplo: "Has comprado 4 artículos y el importe total es de 12.7 euros"
-let articulos = 0
-let euros = 0
+
+// Establecemos las variables a mostrar
 let totalArticulos = compra.length
 let totalEuros = 0
 
+// Recorremos el array y cada subarray
 for (i = 0; i < compra.length; i++){
-    console.log(compra);
-    console.log(compra[i].length);
+    // console.log(compra);
+    // console.log(compra[i].length);
     // for (j = 0; j < compra[i].length; j++){
-        console.log(compra[i].length);
-        console.log(compra[i][0]);
-        console.log(compra[i][1]);
-        console.log(compra[i][2]);
-        console.log(parseFloat(compra[i][1]));
-        console.log(parseFloat(compra[i][2]));
-        console.log(parseFloat(compra[i][1]).toFixed(2) * parseFloat(compra[i][2]).toFixed(2));
-        let parcialEuros = parseFloat(compra[i][1]).toFixed(2) * parseFloat(compra[i][2]).toFixed(2)
-        console.log(parseFloat(parcialEuros).toFixed(2))
-        parcialEuros = parseFloat(parcialEuros).toFixed(2)
-        console.log(parcialEuros);
-        parseFloat(totalEuros).toFixed(2) += parseFloat(parcialEuros).toFixed(2)
-        console.log(totalEuros)
-
+    // let articulo = compra[i][0]
+    // asignamos una variable a precio y cantidad, extrayendo el dato del subarray
+    let precio = compra[i][1]
+    let cantidad = compra[i][2]
+    // console.log(precio * cantidad);
+    //multiplicamos precio por cantidad
+    let parcialEuros = precio * cantidad
+    // console.log(parseFloat(parcialEuros).toFixed(2))
+    // console.log(parcialEuros);
+    // Vamos añadiendo(sumando) cada parcial a totalEuros
+    totalEuros += parcialEuros
+    // console.log(totalEuros)
     // }
-    console.log(totalEuros);
 }
+// Y... mostramos el resultado
+console.log(`Has comprado ${totalArticulos} artículos y el importe total es de ${totalEuros} euros`);
 
 
 // Después añade otro articulo al array anterior y muestra de nuevo el mensaje informativo con los nuevos datos.
-// const compraNew = compra
-console.log(compraNew);
-console.log("10b) Este array incluye una operación de compra:");
-console.log(`Con estos datos${compra}`);
+console.log("10b) Después añade otro articulo al array anterior y muestra de nuevo el mensaje informativo con los nuevos datos.");
+console.log(`Con estos datos: [${compra}], añadimos otro producto...`);
+
+let compraNew = []
+
+for (i = 0; i < compra.length; i++){
+    // Vamos añadiendo cada subarray a compraNew
+    // console.log(compra[i]);
+    compraNew.push(compra[i])
+    // console.log(compraNew[i]);
+}
+// console.log(compraNew);
+compraNew.push(["Chocolate", 1.1, 2 ])
+// console.log(compraNew);
+// console.log(compraNew.length);
+
+totalArticulos = compraNew.length
+totalEuros = 0
+
+// Recorremos el array y cada subarray
+for (i = 0; i < compraNew.length; i++){
+    // asignamos una variable a precio y cantidad, extrayendo el dato del subarray
+    let precio = compraNew[i][1]
+    let cantidad = compraNew[i][2]
+    //multiplicamos precio por cantidad
+    let parcialEuros = precio * cantidad
+    // Vamos añadiendo(sumando) cada parcial a totalEuros
+    totalEuros += parcialEuros
+}
+totalEuros = parseFloat(totalEuros).toFixed(2)
+// console.log(totalEuros)
+// Y... mostramos el resultado
+console.log(`Has comprado ${totalArticulos} artículos y el importe total es de ${totalEuros} euros`);
