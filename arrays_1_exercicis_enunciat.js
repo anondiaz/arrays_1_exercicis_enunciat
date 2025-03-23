@@ -274,20 +274,51 @@ let arrayMixto = [ "Marie", 24, "Pol", 18, "Judith", 22, "Eva", 28 ]
 // 9) Debes obtener otro array llamado arrayBidimensional que sea así:
 // [ ["Marie", 24 ], ["Pol", 18], ["Judith", 22 ], [ "Eva", 28] ]
 
-// Establezco el array
+// Establezco el arrayBidimensional
 let arrayBidimensional = []
-for ( i = 0; i < arrayMixto.length; i++){
-    let arrayConjunto = []
-    console.log(arrayConjunto.length);
-    for (j = 0; j < 2; j++){
-        console.log(arrayMixto);
-        arrayConjunto.push(arrayMixto[i])
-        console.log(arrayConjunto);
-        arrayMixto.shift()
-        console.log(arrayMixto);
-    }
+
+// Recorro cada elemento del arrayMixto
+for ( i = 0; i < arrayMixto.length; i++) {
+    console.log(arrayMixto[i]);
+
+  // Uso i mod 2 para recuperar los datos pares, el array esta definido así, tomo nota
+  if (i % 2 === 0) {
+    // Para comprobar la longitud del array
+    console.log(arrayBidimensional.length);
+    // Para comprobar el contenido del array en cada iteración
+    console.log(arrayBidimensional)
+    // Cuando i es par, añado ese elemento y el siguiente, buen descubrimiento
+    arrayBidimensional.push([arrayMixto[i], arrayMixto[i + 1]]);
+    // Para comprobar el contenido del array en cada iteración despues del push de cada sub-array
+    console.log(arrayBidimensional)
+  }
+  
 }
-console.log(arrayBidimensional);
+console.log(`Así queda el arrayBidimensional :`);
+console.log(arrayBidimensional)
+
+//Comprobación extra de como seleccionar multiples elementos, el problema es cuando falla la integridad de los datos, ojo!!
+
+// let arrayMixtoTriple = [ "Marie", 24, "A", "Pol", 18, "A", "Judith", 22, "B", "Eva", 28, "D", "Paco", 25, "A", "Lola", 27, "E" ]
+
+// // Establezco el array
+// let arrayTridimensional = []
+
+// // Recorro cada elemento del arrayMixto
+// for ( i = 0; i < arrayMixtoTriple.length; i++) {
+//     console.log(arrayMixtoTriple[i]);
+
+//   // Uso i mod 2 para recuperar los datos pares, el array esta definido así
+//   if (i % 3 === 0) {
+//     console.log(arrayTridimensional.length);
+//     console.log(arrayTridimensional);
+//     // Cuando i es par, añado ese elemento y el siguiente, buen descubrimiento
+//     arrayTridimensional.push([arrayMixtoTriple[i], arrayMixtoTriple[i + 1], arrayMixtoTriple[i + 2]]);
+//     console.log(arrayTridimensional);
+//   }
+  
+// }
+// console.log(arrayTridimensional);
 
 
 // ====================================================================================================
